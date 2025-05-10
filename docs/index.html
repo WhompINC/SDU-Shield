@@ -5,7 +5,10 @@
   <title>SDU Shield Launcher</title>
   <script>
     window.onload = () => {
-      window.location.href = "https://whompinc.github.io/Files/sdu_shield_file_tree.html";
+      if (!sessionStorage.getItem("redirected")) {
+        sessionStorage.setItem("redirected", "true");
+        window.location.href = "https://whompinc.github.io/Files/sdu_shield_file_tree.html";
+      }
     };
   </script>
   <style>
@@ -18,7 +21,7 @@
   </style>
 </head>
 <body>
-  <h1>Launching SDU Shield Tree...</h1>
+  <h1>Launching SDU Shield Tree (first visit only)...</h1>
   <noscript>
     <p><a href="https://whompinc.github.io/Files/sdu_shield_file_tree.html">Click here if not redirected</a></p>
   </noscript>
